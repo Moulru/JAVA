@@ -1,0 +1,72 @@
+#환경변수 설정(win7)
+0. 내컴퓨터-우클릭-속성-고급시스템설정-고급탭의 환경변수-Path
+1. 자바가 설치된 폴더의 jdk/bin 경로를 시스템변수 Path에 추가
+(기존에 있는 경로들 끝에 ; <-세미콜론 붙이고 경로를 추가하면됨)
+
+#Javac란?
+자바 컴파일러
+
+#cmd에서 실행경로 바꿀때
+-> cd 실행경로  (붙여넣기할땐 마우스 우클릭으로)
+
+경로>javac Hello.java
+입력하면 해당경로 폴더에 Hello.class <- 파일이 생성됨
+
+
+변수 - 자료형, 연산자
+출력 - print,println,printf
+입력 - scanner
+제어문 - 조건문, 반복문
+
+
+ #string 생성 규칙
+ *  String str1 = "ABC";
+ *  	1. "ABC"라는 문자열 객체가 메모리 어딘가에 생성
+ *  	2. str1이 "ABC"를 가리킴
+
+
+ #자료형의 종류
+ * 	1. 논리형
+ * 		boolean (1byte / 8bit) [true,false]
+ * 	2. 문자형
+ * 		char (2byte / 16bit) [0~65535] (2의16승 만큼)
+ * 	3. 정수형
+ * 		byte (1byte / 8bit) [-128 ~ 127]
+ * 		short (2byte / 16bit) [-32768~32767]
+ * 		int (4byte / 32bit) [약 -21억~21억]           
+ * 		long (8byte / 64bit) [약 -900경~900경]
+ * 	4. 실수형
+ * 		float (4byte / 32bit) [소수점 아래 6자리 정도]
+ * 		double (8byte / 64bit) [소수점 아래 16자리 정도]
+ * 			---> double이 더 정밀하다.
+
+
+ #형식 : %[-][0][n][.m] 서식문자
+ *  	[]안의 내용은 옵션이다 (사용 안해도 됨)
+ *  
+ *  	%b		boolean
+ *  	%d		10진수(ddecimal)
+ *  	%o		8진수(octal)
+ *  	%x,%X	16진수(hexa-deciaml)
+ *  	%f		부동소수점(소수표현)
+ *  	%e,%e	지수표현식(exponent)
+ *  	%c		문자(character)		-> 1개 문자 (char 자료형)
+ *  	%s		문자열(string)		-> 문자열	(string 자료형)
+ *
+
+
+ #이스케이프 문자(역슬래시 사용)
+
+ *  	\n		개행(줄바꿈)
+ *  	\t		탭(tab)
+ *  	\\		\를 출력하기
+ *  	\'		'를 출력하기
+ *  	\"		"를 출력하기
+
+ #서식문자 사용법
+System.out.printf("[%5d]  \n", dx);	// [숫자] : 전체 자리수 지정(우측정렬)
+System.out.printf("[%-5d] \n", dx);	// [-]	 : 자리수 지정이 된 경우, 좌측정렬
+System.out.printf("[%05d] \n", dx);	// [0]	 : 자리수 지정이 된 경우, 빈자리에 0을 채움
+
+System.out.printf("x / y = %f	\n", (dx/dy) );
+System.out.printf("x / y = %.21f\n", (dx/dy) );	// [.m] 소수점 21번째까지 표기
